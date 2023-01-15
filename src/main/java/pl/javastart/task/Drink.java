@@ -7,7 +7,9 @@ public class Drink {
     String drinkName;
     float drinkPrice;
     boolean drinkAlco;
-    Ingredients ingredients = new Ingredients();
+    Ingredient ingredient1 = new Ingredient();
+    Ingredient ingredient2 = new Ingredient();
+    Ingredient ingredient3 = new Ingredient();
 
     public Drink(String drinkName, float drinkPrice, boolean drinkAlco) {
         this.drinkName = drinkName;
@@ -15,25 +17,21 @@ public class Drink {
         this.drinkAlco = drinkAlco;
     }
 
-    public class Ingredients {
-        String ingredient1Name;
-        float ingredient1Volume;
-        String ingredient2Name;
-        float ingredient2Volume;
-        String ingredient3Name;
-        float ingredient3Volume;
+    public class Ingredient {
+        String ingredientName;
+        float ingredientVolume;
     }
 
     public void ingredients(String ingredient1Name, float ingredient1Volume,
                             String ingredient2Name, float ingredient2Volume,
                             String ingredient3Name, float ingredient3Volume) {
 
-        this.ingredients.ingredient1Name = ingredient1Name;
-        this.ingredients.ingredient1Volume = ingredient1Volume;
-        this.ingredients.ingredient2Name = ingredient2Name;
-        this.ingredients.ingredient2Volume = ingredient2Volume;
-        this.ingredients.ingredient3Name = ingredient3Name;
-        this.ingredients.ingredient3Volume = ingredient3Volume;
+        this.ingredient1.ingredientName = ingredient1Name;
+        this.ingredient1.ingredientVolume = ingredient1Volume;
+        this.ingredient2.ingredientName = ingredient2Name;
+        this.ingredient2.ingredientVolume = ingredient2Volume;
+        this.ingredient3.ingredientName = ingredient3Name;
+        this.ingredient3.ingredientVolume = ingredient3Volume;
 
     }
 
@@ -42,12 +40,12 @@ public class Drink {
         System.out.printf(Locale.US, "Cena: %.1fzł \n", this.drinkPrice);
         System.out.println("Czy zawiera alkohol? " + this.drinkAlco);
         System.out.println("Składniki:");
-        System.out.println(this.ingredients.ingredient1Name);
-        System.out.println(this.ingredients.ingredient2Name);
-        System.out.println(this.ingredients.ingredient3Name);
+        System.out.println(this.ingredient1.ingredientName);
+        System.out.println(this.ingredient2.ingredientName);
+        System.out.println(this.ingredient3.ingredientName);
         System.out.printf(Locale.US, "Pojemność: %.1fml \n\n",
-                (this.ingredients.ingredient1Volume + this.ingredients.ingredient2Volume
-                + this.ingredients.ingredient3Volume));
+                (this.ingredient1.ingredientVolume + this.ingredient2.ingredientVolume
+                + this.ingredient3.ingredientVolume));
 
     }
 
